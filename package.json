@@ -1,6 +1,6 @@
 {
-  "name": "com.xacce.actor.collider",
-  "displayName": "Xacce - Actor.Collider",
+  "name": "com.xacce.blobactor.collider",
+  "displayName": "Xacce - BlobActor.Collider",
   "version": "0.0.0",
   "unity": "2022.3",
   "description": "Collisions for  actor",

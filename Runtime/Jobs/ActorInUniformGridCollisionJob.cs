@@ -20,8 +20,8 @@ namespace Xacce.BlobActor.Collide.Runtime
         public float3 myPosition;
         public BlobActorShape.Blob myShape;
         public DynamicObjectVelocity velocity;
-        public ActorFlags flags;
-        public ComponentLookup<ActorFlags> flagsRo;
+        public BlobActorFlags flags;
+        public ComponentLookup<BlobActorFlags> flagsRo;
         public ComponentLookup<BlobActorShape> shapeLookup;
         public float3 displace;
         public int hits;
@@ -45,7 +45,7 @@ namespace Xacce.BlobActor.Collide.Runtime
                 }
 
                 added++;
-                if ((otherFlags.flags & ActorFlags.Flag.DynamicCollide) == 0)
+                if ((otherFlags.flags & BlobActorFlags.Flag.DynamicCollide) == 0)
                     continue;
                 ref var otherBlob = ref otherShape.blob.Value;
                 float extent = myShape.extents.y * 0.5f;
@@ -101,7 +101,7 @@ namespace Xacce.BlobActor.Collide.Runtime
     {
         public UniformSpatialDatabaseReadonlyBridge bridge;
 
-        [ReadOnly] public ComponentLookup<ActorFlags> flagsRo;
+        [ReadOnly] public ComponentLookup<BlobActorFlags> flagsRo;
         [ReadOnly] public ComponentLookup<BlobActorShape> blobActorShapeRo;
         private Random _rng;
 
@@ -110,7 +110,7 @@ namespace Xacce.BlobActor.Collide.Runtime
         private void Execute(ref LocalTransform transform, DynamicObjectVelocity velocity, Entity entity)
         {
             var myFlags = flagsRo[entity];
-            if ((myFlags.flags & ActorFlags.Flag.DynamicCollide) == 0) return;
+            if ((myFlags.flags & BlobActorFlags.Flag.DynamicCollide) == 0) return;
             var myShape = blobActorShapeRo[entity];
             var myBlob = myShape.blob.Value;
             var visitor = new Visitor()
