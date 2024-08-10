@@ -1,0 +1,27 @@
+{
+    "name": "com.xacce.actor.collider.hybrid",
+    "rootNamespace": "Xacce.BlobActor.Collide.Hybrid",
+    "references": [
+        "Unity.Transforms",
+        "Unity.Burst",
+        "Unity.Entities",
+        "Unity.Mathematics",
+        "Unity.Collections",
+        "Unity.AI.Navigation",
+        "Unity.Entities.Hybrid",
+        "com.xacce.susanin.runtime",
+        "com.xacce.troupe",
+        "com.xacce.spatialhashing",
+        "com.xacce.introvert.hybrid",
+        "com.xacce.core.hybrid",
+        "com.xacce.actor.collider.Runtime"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
